@@ -1,3 +1,11 @@
+## 1.0.9
+
+* Documentation improvements:
+  * Improved README.md formatting and organization
+  * Removed emoji icons for better readability
+  * Made code examples more concise
+  * Fixed markdown formatting issues
+
 ## 1.0.8
 
 * Documentation improvements:

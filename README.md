@@ -1,4 +1,4 @@
-# 🔄 Terminate Restart
+# Terminate Restart
 
 [![pub package](https://img.shields.io/pub/v/terminate_restart.svg)](https://pub.dev/packages/terminate_restart)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -6,7 +6,7 @@
 
 A robust Flutter plugin for terminating and restarting your app with extensive customization options. Perfect for implementing dynamic updates, clearing app state, or refreshing your app's UI.
 
-## 📱 Demo
+## Demo
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/sleem2012/terminate_restart/main/.github/assets/demo.gif" alt="Plugin Demo" width="300"/>
@@ -20,9 +20,9 @@ A robust Flutter plugin for terminating and restarting your app with extensive c
   <em>Clean & Simple Interface</em>
 </p>
 
-## 🌟 Features
+## Features
 
-- ✨ **Three Restart Modes**:
+- **Three Restart Modes**:
   - **UI-only Restart**: (~200ms)
     - Recreates activities/views while maintaining connections
     - Perfect for theme changes, language switches
@@ -41,30 +41,30 @@ A robust Flutter plugin for terminating and restarting your app with extensive c
     - Supports both UI-only and full restart
     - Perfect for user-initiated actions
 
-- 🧹 **Smart Data Management**:
+- **Smart Data Management**:
   - Configurable data clearing during restart
   - Granular control over data preservation
   - Secure handling of sensitive information
 
-- 🔒 **Security Features**:
+- **Security Features**:
   - Optional keychain data preservation
   - Secure user defaults handling
   - Clean process termination
 
-- 📱 **Platform Support**:
-  - ✅ Android: Full support with activity recreation
-  - ✅ iOS: Compliant with App Store guidelines
+- **Platform Support**:
+  - Android: Full support with activity recreation
+  - iOS: Compliant with App Store guidelines
 
-- 💫 **User Experience**:
+- **User Experience**:
   - Built-in confirmation dialogs
   - Customizable messages and buttons
   - Smooth transitions and animations
 
-## 📦 Installation
+## Installation
 
 ```yaml
 dependencies:
-  terminate_restart: ^1.0.8
+  terminate_restart: ^1.0.9
 ```
 
 ## Quick Start
@@ -74,7 +74,7 @@ Get up and running with Terminate Restart in minutes:
 1. **Add Dependency**
 ```yaml
 dependencies:
-  terminate_restart: ^1.0.8
+  terminate_restart: ^1.0.9
 ```
 
 2. **Import Package**
@@ -151,7 +151,7 @@ This plugin follows Apple's App Store guidelines regarding app termination:
 
 > **Note**: While Android allows direct app termination, iOS termination is handled through system-approved methods.
 
-## 🔍 Common Use Cases
+## Common Use Cases
 
 1. **After Dynamic Updates**
    ```dart
@@ -204,7 +204,7 @@ This plugin follows Apple's App Store guidelines regarding app termination:
    );
    ```
 
-## 📊 Performance Metrics
+## Performance Metrics
 
 | Operation | Average Time |
 |-----------|-------------|
@@ -213,7 +213,7 @@ This plugin follows Apple's App Store guidelines regarding app termination:
 | Data Clearing | ~200ms |
 | With Dialog | +100ms |
 
-## 🔐 Security Considerations
+## Security Considerations
 
 1. **Sensitive Data**
    - Use `preserveKeychain` for credentials
@@ -230,22 +230,22 @@ This plugin follows Apple's App Store guidelines regarding app termination:
    - Secure data clearing
    - Protected file access
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please read our [contributing guidelines](CONTRIBUTING.md) before submitting PRs.
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 📞 Support
+## Support
 
 If you have any questions or need help, you can:
 - Open an [issue](https://github.com/sleem2012/terminate_restart/issues)
 - Check our [example](https://github.com/sleem2012/terminate_restart/tree/main/example) for more usage examples
 - Read our [API documentation](https://pub.dev/documentation/terminate_restart/latest/)
 
-## 📚 Complete Example
+## Complete Example
 
 Check out our [example app](https://github.com/sleem2012/terminate_restart/tree/main/example) for a full demonstration of all features, including:
 
@@ -256,14 +256,14 @@ Check out our [example app](https://github.com/sleem2012/terminate_restart/tree/
 - State management
 - Platform-specific features
 
-## 🎥 Demo
+## Demo
 
 ### Quick Preview
 <p align="center">
   <img src="https://raw.githubusercontent.com/sleem2012/terminate_restart/main/.github/assets/demo.gif" alt="Quick Preview" width="300"/>
 </p>
 
-## 🔧 Platform-Specific Details
+## Platform-Specific Details
 
 ### Android Implementation
 
@@ -290,9 +290,9 @@ The iOS implementation provides:
 - Keychain data handling
 - User defaults management
 
-## 👨‍💻 Author
+## Author
 
-Made with ❤️ by Ahmed Sleem
+Made with by Ahmed Sleem
 [GitHub](https://github.com/sleem2012) • [pub.dev](https://pub.dev/publishers/sleem2012) • [LinkedIn](https://www.linkedin.com/in/sleem98/)
 
 ---
@@ -303,7 +303,7 @@ Made with ❤️ by Ahmed Sleem
   <a href="https://github.com/sleem2012/terminate_restart/issues">Issues</a>
 </p>
 
-## 🔧 Configuration Options
+## Configuration Options
 
 ### Core Parameters
 
@@ -314,7 +314,7 @@ Made with ❤️ by Ahmed Sleem
 | `preserveKeychain` | `bool` | `false` | Keep keychain data when clearing |
 | `preserveUserDefaults` | `bool` | `false` | Keep user defaults when clearing |
 
-## 🤔 Frequently Asked Questions
+## Frequently Asked Questions
 
 ### 1. What's the difference between UI-only and Full restart?
 - **UI-only Restart**: Only recreates the UI components while keeping the app process alive. Perfect for theme changes or language switches.
@@ -339,7 +339,7 @@ Yes! The plugin:
 - Handles errors gracefully
 - Has no special permission requirements
 
-## 🎯 Advanced Use Cases
+## Advanced Use Cases
 
 ### 1. Language Change with Data Preservation
 ```dart
@@ -403,7 +403,7 @@ Future<void> secureLogout() async {
 }
 ```
 
-## 🔄 How It Works
+## How It Works
 
 ```mermaid
 graph TD

@@ -71,7 +71,7 @@ The demo showcases:
 
 ```yaml
 dependencies:
-  terminate_restart: ^1.0.7
+  terminate_restart: ^1.0.8
 ```
 
 ### Permissions
@@ -95,60 +95,14 @@ Get up and running with Terminate Restart in minutes:
 1. **Add Dependency**
 ```yaml
 dependencies:
-  terminate_restart: ^1.0.7
+  terminate_restart: ^1.0.8
 ```
 
 2. **Import Package**
 ```dart
 import 'package:terminate_restart/terminate_restart.dart';
 ```
-
-3. **Basic Usage**
-```dart
-// UI-only refresh (fast, maintains connections)
-await TerminateRestart.instance.restartApp(
-  options: const TerminateRestartOptions(
-    terminate: false,
-  ),
-);
-
-// Full app restart with confirmation
-await TerminateRestart.instance.restartApp(
-  options: const TerminateRestartOptions(
-    terminate: true,
-  ),
-  mode: RestartMode.withConfirmation,
-  dialogTitle: 'Restart Required',
-  dialogMessage: 'Do you want to restart the app?',
-);
-```
-
-## iOS App Store Compliance
-
-This plugin follows Apple's App Store guidelines regarding app termination:
-
-1. **User-Initiated Actions**: The plugin only performs termination in response to explicit user actions (e.g., logout, clear data, etc.).
-
-2. **Graceful Shutdown**: On iOS, the plugin uses approved APIs to ensure graceful app termination:
-   - Uses `exit(0)` for clean termination
-   - Properly saves state and closes resources
-   - Follows iOS application lifecycle
-
-3. **Restart Mechanism**: The restart functionality complies with iOS guidelines by:
-   - Using approved launch mechanisms
-   - Preserving user preferences when requested
-   - Maintaining system integrity
-
-4. **Data Handling**: When clearing data:
-   - Respects iOS data protection
-   - Properly handles keychain items
-   - Maintains necessary system files
-
-> **Note**: While Android allows direct app termination, iOS termination is handled through system-approved methods to ensure App Store compliance.
-
-## 🚀 Getting Started
-
-1. **Initialize the Plugin**
+3. **Initialize the Plugin**
 ```dart
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -157,8 +111,7 @@ void main() {
   runApp(MyApp());
 }
 ```
-
-2. **Basic Usage**
+4. **Basic Usage**
 ```dart
 // UI-only restart (fast, maintains connections)
 await TerminateRestart.instance.restartApp(
@@ -193,59 +146,42 @@ await TerminateRestart.instance.restartApp(
   dialogTitle: 'Restart App',
   dialogMessage: 'Do you want to restart the app?',
 );
-```
 
-### Usage Reference Table
+## Feature Comparison Table
 
-| Scenario | Description | Code Example |
-|----------|-------------|--------------|
-| UI Refresh | Quick UI restart without termination | ```dart
-await TerminateRestart.instance.restartApp(
-  options: const TerminateRestartOptions(
-    terminate: false,
-  ),
-);``` |
-| Full Restart | Complete app termination and restart | ```dart
-await TerminateRestart.instance.restartApp(
-  options: const TerminateRestartOptions(
-    terminate: true,
-  ),
-);``` |
-| Clear Data | Restart with data clearing | ```dart
-await TerminateRestart.instance.restartApp(
-  options: const TerminateRestartOptions(
-    terminate: true,
-    clearData: true,
-  ),
-);``` |
-| Preserve Settings | Clear data but keep settings | ```dart
-await TerminateRestart.instance.restartApp(
-  options: const TerminateRestartOptions(
-    terminate: true,
-    clearData: true,
-    preserveKeychain: true,
-    preserveUserDefaults: true,
-  ),
-);``` |
-| With Confirmation | Show dialog before restart | ```dart
-await TerminateRestart.instance.restartApp(
-  options: const TerminateRestartOptions(
-    terminate: true,
-  ),
-  mode: RestartMode.withConfirmation,
-  dialogTitle: 'Restart Required',
-  dialogMessage: 'Do you want to restart?',
-);``` |
-| After Update | Restart after applying updates | ```dart
-await TerminateRestart.instance.restartApp(
-  options: const TerminateRestartOptions(
-    terminate: true,
-    clearData: false,
-  ),
-  mode: RestartMode.withConfirmation,
-  dialogTitle: 'Update Ready',
-  dialogMessage: 'Restart to apply updates?',
-);``` |
+| Feature | Description |
+|---------|-------------|
+| UI Restart | Recreates UI without terminating the app |
+| Full Restart | Terminates & restarts app completely |
+| Data Clearing | Optionally clears storage, keeping keychain data |
+| Confirmation Dialog | Optional user confirmation before restart |
+| iOS Compliance | Uses system-approved methods for App Store compliance |
+
+## iOS App Store Compliance
+
+This plugin follows Apple's App Store guidelines regarding app termination:
+
+1. **User-Initiated Actions**: The plugin only performs termination in response to explicit user actions (e.g., logout, clear data, etc.).
+
+2. **Graceful Shutdown**: On iOS, the plugin uses approved APIs to ensure graceful app termination:
+   - Uses `exit(0)` for clean termination
+   - Properly saves state and closes resources
+   - Follows iOS application lifecycle
+
+3. **Restart Mechanism**: The restart functionality complies with iOS guidelines by:
+   - Using approved launch mechanisms
+   - Preserving user preferences when requested
+   - Maintaining system integrity
+
+4. **Data Handling**: When clearing data:
+   - Respects iOS data protection
+   - Properly handles keychain items
+   - Maintains necessary system files
+
+> **Note**: While Android allows direct app termination, iOS termination is handled through system-approved methods to ensure App Store compliance.
+
+
+
 
 ### Advanced Usage
 

@@ -1,3 +1,12 @@
+## 1.0.8
+
+* Documentation improvements:
+  * Streamlined Getting Started section
+  * Removed redundant sections
+  * Made code examples more concise
+  * Added feature comparison table
+  * Improved overall readability
+
 ## 1.0.7
 
 * Updated deprecated platform message handling to use `channelBuffers.push`

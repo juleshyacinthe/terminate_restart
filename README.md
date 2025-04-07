@@ -64,7 +64,7 @@ A robust Flutter plugin for terminating and restarting your app with extensive c
 
 ```yaml
 dependencies:
-  terminate_restart: ^1.0.9
+  terminate_restart: ^1.0.10
 ```
 
 ## Quick Start
@@ -74,7 +74,7 @@ Get up and running with Terminate Restart in minutes:
 1. **Add Dependency**
 ```yaml
 dependencies:
-  terminate_restart: ^1.0.9
+  terminate_restart: ^1.0.10
 ```
 
 2. **Import Package**
@@ -337,10 +337,54 @@ This configuration allows the plugin to restart your app by opening a URL with y
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
-| `terminate` | `bool` | `true` | Full termination vs UI-only restart |
-| `clearData` | `bool` | `false` | Clear app data during restart |
-| `preserveKeychain` | `bool` | `false` | Keep keychain data when clearing |
-| `preserveUserDefaults` | `bool` | `false` | Keep user defaults when clearing |
+| `terminate` | `bool` | `true` | Whether to fully terminate the app process or just restart the UI |
+| `clearData` | `bool` | `false` | Whether to clear app data during restart |
+| `preserveKeychain` | `bool` | `false` | Whether to preserve keychain data when clearing app data |
+| `preserveUserDefaults` | `bool` | `false` | Whether to preserve user defaults when clearing app data |
+
+### API Methods
+
+#### `restartApp`
+
+```dart
+Future<bool> restartApp({
+  required TerminateRestartOptions options,
+})
+```
+
+Restarts the app immediately without user confirmation. Returns `true` if the restart was successful.
+
+**Parameters:**
+- `options`: A `TerminateRestartOptions` object that configures the restart behavior.
+
+#### `restartAppWithConfirmation`
+
+```dart
+Future<bool> restartAppWithConfirmation(
+  BuildContext context, {
+  String title = 'Restart Required',
+  String message = 'The app needs to restart to apply changes.',
+  String confirmText = 'Restart Now',
+  String cancelText = 'Later',
+  bool clearData = false,
+  bool preserveKeychain = false,
+  bool preserveUserDefaults = false,
+  bool terminate = true,
+})
+```
+
+Shows a confirmation dialog before restarting the app. Returns `true` if the user confirmed and the restart was successful, or `false` if the user canceled.
+
+**Parameters:**
+- `context`: The BuildContext used to show the dialog.
+- `title`: The title of the confirmation dialog.
+- `message`: The message shown in the confirmation dialog.
+- `confirmText`: The text for the confirm button.
+- `cancelText`: The text for the cancel button.
+- `clearData`: Whether to clear app data during restart.
+- `preserveKeychain`: Whether to preserve keychain data when clearing app data.
+- `preserveUserDefaults`: Whether to preserve user defaults when clearing app data.
+- `terminate`: Whether to fully terminate the app process or just restart the UI.
 
 ## Frequently Asked Questions
 

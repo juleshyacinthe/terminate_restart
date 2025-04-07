@@ -1,3 +1,11 @@
+## 1.0.10
+
+* Fixed Swift compiler error in Xcode 16.2 with Flutter 3.29.0:
+  * Modified engine property access to handle non-optional FlutterEngine type
+* Added documentation for required iOS configuration:
+  * Detailed URL scheme configuration in Info.plist for iOS restart functionality
+* Improved compatibility with latest Flutter versions
+
 ## 1.0.9
 
 * Documentation improvements:

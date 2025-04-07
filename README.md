@@ -292,7 +292,7 @@ The iOS implementation provides:
 
 ## Author
 
-Made with by Ahmed Sleem
+Created by Ahmed Sleem
 [GitHub](https://github.com/sleem2012) • [pub.dev](https://pub.dev/publishers/sleem2012) • [LinkedIn](https://www.linkedin.com/in/sleem98/)
 
 ---
@@ -302,6 +302,40 @@ Made with by Ahmed Sleem
   <a href="https://github.com/sleem2012/terminate_restart">GitHub</a> •
   <a href="https://github.com/sleem2012/terminate_restart/issues">Issues</a>
 </p>
+
+## iOS Configuration
+
+For the restart functionality to work properly on iOS, you need to add URL scheme entries to your `Info.plist` file:
+
+```xml
+<key>CFBundleURLTypes</key>
+<array>
+    <dict>
+        <key>CFBundleTypeRole</key>
+        <string>Editor</string>
+        <key>CFBundleURLSchemes</key>
+        <array>
+            <string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+        </array>
+    </dict>
+    <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+            <string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+        </array>
+    </dict>
+    <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+            <string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+        </array>
+        <key>CFBundleURLName</key>
+        <string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+    </dict>
+</array>
+```
+
+This configuration allows the plugin to restart your app by opening a URL with your app's bundle identifier.
 
 ## Configuration Options
 

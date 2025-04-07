@@ -3,7 +3,6 @@
     <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
 
     <application
-        android:name="com.ahmedsleem.terminate_restart.TerminateRestartApplication"
         android:label="terminate_restart_example"
         android:icon="@mipmap/ic_launcher"
         android:enableOnBackInvokedCallback="true">

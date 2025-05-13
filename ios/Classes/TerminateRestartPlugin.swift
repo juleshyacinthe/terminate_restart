@@ -163,7 +163,7 @@ public class TerminateRestartPlugin: NSObject, FlutterPlugin {
                 window.isUserInteractionEnabled = true
                 
                 // Clean up old engine
-                flutterEngine.destroyContext()
+                flutterEngine?.destroyContext()
                 
                 // Reset navigation on new engine
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
